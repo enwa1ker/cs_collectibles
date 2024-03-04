@@ -14,7 +14,7 @@ HTML && CSS && JS && React
 
 ## resource
 
-API нашел на этом репозитории (CSGOAPI)[https://github.com/ByMykel/CSGO-API]
+API нашел на этом репозитории (api)[https://github.com/ByMykel/CSGO-API]
 
 
 
