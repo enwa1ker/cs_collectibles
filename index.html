@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSGO Skins</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="skinsContainer"></div>
+
+    <script>
+        const url = 'https://bymykel.github.io/CSGO-API/api/en/skins.json';
+        const addedWeapons = {};
+        let totalSkins = 0;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const skinsContainer = document.getElementById('skinsContainer');
+
+                data.forEach(skin => {
+                    const weapon = skin.weapon;
+                    if (!addedWeapons[weapon]) {
+                        addedWeapons[weapon] = true;
+                        totalSkins++;
+
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+
+                        const image = document.createElement('img');
+                        image.src = skin.image;
+                        image.alt = skin.name;
+
+                        const name = document.createElement('h3');
+                        name.textContent = skin.name;
+
+                        const description = document.createElement('p');
+                        description.textContent = skin.description;
+
+                        card.appendChild(image);
+                        card.appendChild(name);
+                        card.appendChild(description);
+
+                        skinsContainer.appendChild(card);
+                    }
+                });
+
+                console.log('Total skins:', totalSkins);
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+    </script>
+</body>
+</html>
