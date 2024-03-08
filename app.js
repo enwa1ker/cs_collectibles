@@ -1,4 +1,4 @@
-axios.get('https://bymykel.github.io/CSGO-API/api/en/skins.json')
+axios.get('https://bymykel.github.io/CSGO-API/api/en/all.json')
     .then(response => {
         const skins = response.data;
         const skinsGrid = document.querySelector('.skins-grid');
