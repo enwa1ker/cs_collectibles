@@ -1,5 +1,5 @@
 body {
-  background-color: #222222;
+  background-color: #252525;
     margin: 0;
     font-family: Arial, sans-serif;
   }
@@ -11,14 +11,27 @@ body {
   }
   
   .header {
+    height: 70px;
     background-color: rgba(42, 22, 22, 0.87);
     color: #fff;
   }
-  
+
+  /* .logo img {
+    height: 200px;
+    width: 200px;
+  } */
+
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+/*   
   .logo {
     margin: 0;
     font-size: 24px;
-  }
+  } */
 
 .container {
   width: 80%;
@@ -79,11 +92,14 @@ h2 {
   }
   
   .nav-menu li a {
+    
+    padding: 20px;
     color: #fff;
     text-decoration: none;
   }
   
   .nav-menu li a:hover {
+    transition: 0.5s  ;
     color: #ff6b00;
   }
 

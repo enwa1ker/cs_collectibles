@@ -1,4 +1,4 @@
-axios.get('https://bymykel.github.io/CSGO-API/api/en/skins.json')
+axios.get('https://github.com/p3hndrx/MLBB-API/blob/main/v1/hero-meta-final.json ')
     .then(response => {
         const skins = response.data;
         const skinsGrid = document.querySelector('.skins-grid');
